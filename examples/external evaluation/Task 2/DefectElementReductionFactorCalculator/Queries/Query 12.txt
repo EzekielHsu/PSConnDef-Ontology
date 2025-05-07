@@ -1,0 +1,20 @@
+INSERT {  
+    ?defectElement :hasReductionFactor ?defectElementReductionFactor .
+    ?defectElementReductionFactor a :DefectElementReductionFactor ;
+                                  :hasValue ?reductionValue .
+}
+WHERE {
+    ?defectElement a/rdfs:subClassOf* :DefectElement ;
+                   :hasDefectElementTopologyType ?topologyType .
+    ?topologyType :hasDescription "Top" .
+    ?defectElement :hasParameter ?param .
+    ?param :hasValue ?paramValue .
+    
+    BIND(
+        IF(?paramValue <= 96, 
+           1.0, 
+           1.5 - (?paramValue / 192)  
+        ) AS ?reductionValue          
+    )
+    BIND(IRI(CONCAT(STR(?defectElement), "_ReductionFactor")) AS ?defectElementReductionFactor)
+}

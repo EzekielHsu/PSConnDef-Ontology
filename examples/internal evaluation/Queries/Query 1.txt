@@ -1,0 +1,32 @@
+SELECT DISTINCT ?sleeve ?property ?value
+WHERE {
+    # Find sleeves of type Sleeve
+    ?sleeve rdftype pbcpsleeve:Sleeve .
+
+    # Ensure the sleeve has a defect of type Defect
+    ?sleeve :hasDefect ?defect .
+    ?defect rdftype :Defect .
+
+    # Ensure the defect is decomposed into exactly 2 DefectElement instances
+    ?defect :isDecomposedinto ?defectElement .
+    ?defectElement rdftype pbcpsleeveValidArea .
+
+    # Ensure that there are over 1 defect elements
+    {
+        SELECT ?defect
+        WHERE {
+            ?defect :isDecomposedinto ?defectElement .
+            ?defectElement rdftype pbcpsleeveValidArea .
+        }
+        GROUP BY ?defect
+        HAVING (COUNT(DISTINCT ?defectElement) > 1)
+    }
+
+    # Retrieve properties and values for each sleeve
+    OPTIONAL {
+        ?sleeve ?property ?value .
+        FILTER (ISTRSTARTS(STR(?property), "http://www.w3.org/1999/02/22-rdf-syntax-nsf")
+        FILTER (ISTRSTARTS(STR(?property), "http://www.w3.org/2002/07/owl#"))
+    }
+}
+ORDER BY ?sleeve ?property

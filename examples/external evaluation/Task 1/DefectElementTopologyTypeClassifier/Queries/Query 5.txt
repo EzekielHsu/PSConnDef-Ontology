@@ -1,0 +1,11 @@
+INSERT {
+    ?defectelement :hasDefectElementTopologyType ?topologyType .
+    ?topologyType a :DefectElementTopologyType ;
+        :hasDescription ?description .
+}
+WHERE {
+    ?defectelement a :UniformlyDistributedBubbles .
+    
+    BIND("Uniformly distributed bubbles" AS ?description)
+    BIND(IRI(CONCAT(STR(?defectelement), "_TopologyType")) AS ?topologyType)
+}

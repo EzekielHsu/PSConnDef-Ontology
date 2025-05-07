@@ -1,0 +1,22 @@
+INSERT {
+    ?defectelement :hasDefectElementTopologyType ?topologyType .
+    ?topologyType a :DefectElementTopologyType ;
+        :hasDescription ?description .
+}
+WHERE {
+    ?defectelement a :ValidArea .
+    ?defectelement :hasDefectElementCoordinate ?coord . 
+    ?connector :hasConnectorLength ?length .
+    ?connector :hasConnectorCoordinateSystem ?connectorSystem .
+    ?coord :isDefinedIn ?connectorSystem .
+    ?coord :hasThirdValue ?value .
+    
+    BIND (?length / -6 AS ?oneThird)
+    BIND (?length / 6 AS ?twoThird)
+    BIND (
+        IF(?value <= ?oneThird, "Top",
+        IF(?value <= ?twoThird, "Middle", "Bottom")
+        ) AS ?description
+    )
+    BIND(IRI(CONCAT(STR(?defectelement), "_TopologyType")) AS ?topologyType)
+}

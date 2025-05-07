@@ -1,0 +1,25 @@
+INSERT {
+    ?relationship rdf:type :ConnectorTopologyRelationship ;
+                 :hasDescription ?combinedDesc .
+    ?connectorGroup :isDecomposedBasedOn ?relationship .       
+    ?topologyType :isGroupedInto ?relationship .
+}
+WHERE {
+    {
+        SELECT ?connectorGroup
+               (GROUP_CONCAT(?desc; SEPARATOR=" + ") AS ?combinedDesc)
+               (IRI(CONCAT(STR(?connectorGroup), "_TopologyRel")) AS ?relationship)
+        WHERE {
+            ?connector a/rdfs:subClassOf* :Connector ;
+                       :hasConnectorTopologyType ?topologyType ;
+                       :hasConnectorCoordinate/:isDefinedIn ?coordSystem .
+            ?topologyType :hasDescription ?desc .
+            ?connectorGroup :hasConnectorGroupCoordinateSystem ?coordSystem .
+        }
+        GROUP BY ?connectorGroup
+    }
+    ?connector :hasConnectorTopologyType ?topologyType ;
+               :hasConnectorCoordinate/:isDefinedIn ?coordSystem .
+    ?connectorGroup :hasConnectorGroupCoordinateSystem ?coordSystem .
+    FILTER NOT EXISTS { ?relationship a :ConnectorTopologyRelationship }
+}

@@ -1,0 +1,18 @@
+INSERT {  
+  ?connectorGroup :hasRiskLevel ?connectorGroupRiskLevel .
+  ?connectorGroupRiskLevel a :ConnectorGroupRiskLevel ;
+                           :hasDescription ?groupRiskLabel .
+}
+WHERE {
+  ?connectorGroup a/rdfs:subClassOf :ConnectorGroup ;
+                  :hasReductionFactor ?connectorGroupReductionFactor .
+  ?connectorGroupReductionFactor :hasValue ?value .
+  
+  BIND(IRI(CONCAT(STR(?connectorGroupReductionFactor), "_RiskLevel")) AS ?connectorGroupRiskLevel)
+  
+  BIND(
+    IF(?value > 0.95 && ?value <= 1, "Low",
+      IF(?value > 0.9 && ?value <= 0.95, "Medium", "High")
+    ) AS ?groupRiskLabel
+  )
+}

@@ -1,0 +1,17 @@
+INSERT {  
+  ?connector :hasRiskLevel ?connectorRiskLevel .
+  ?connectorRiskLevel a :ConnectorRiskLevel ;
+                      :hasDescription ?riskLabel .
+}
+WHERE {
+  ?connector a/rdfs:subClassOf :Connector ;
+             :hasReductionFactor ?connectorReductionFactor .
+  ?connectorReductionFactor :hasValue ?value .
+  
+  BIND(IRI(CONCAT(STR(?connectorReductionFactor), "_RiskLevel")) AS ?connectorRiskLevel)
+  BIND(
+    IF(?value > 0.95 && ?value <= 1, "Low",
+      IF(?value > 0.9 && ?value <= 0.95, "Medium", "High")
+    ) AS ?riskLabel
+  )
+}

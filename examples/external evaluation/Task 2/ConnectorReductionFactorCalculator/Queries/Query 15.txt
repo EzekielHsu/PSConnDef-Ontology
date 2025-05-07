@@ -1,0 +1,62 @@
+INSERT {  
+  ?connector :hasReductionFactor ?connectorReductionFactor .
+  ?connectorReductionFactor rdf:type :ConnectorReductionFactor ;
+                           :hasValue ?reductionFactorValue .
+}
+WHERE {
+  SELECT ?connector 
+         ((COALESCE(?value1, 1.0) * 
+          COALESCE(?value2, 1.0) * 
+          COALESCE(?value3, 1.0) * 
+          COALESCE(?value4, 1.0) * 
+          COALESCE(?value5, 1.0)) AS ?reductionFactorValue)
+         (IRI(CONCAT(STR(?connector), "_ReductionFactor")) AS ?connectorReductionFactor)
+  WHERE {
+    ?connector rdf:type/rdfs:subClassOf* :Connector .
+    
+    OPTIONAL {
+      ?connector :hasDefect ?defect .
+      ?defect :isDecomposedBasedOn ?topologyRel .
+      ?defectElement :isGroupedInto ?defect .
+      ?defectElement :hasReductionFactor ?defectReduction .
+      ?defectReduction :hasValue ?value1 .
+    }
+    
+    OPTIONAL {
+      ?connector :hasDefect ?defect .
+      ?defect :isDecomposedBasedOn ?topologyRel2 .
+      ?defectElement2 :isGroupedInto ?defect .
+      ?defectElement2 :hasReductionFactor ?defectReduction2 .
+      ?defectReduction2 :hasValue ?value2 .
+      FILTER (?defectElement2 != ?defectElement)
+    }
+    
+    OPTIONAL {
+      ?connector :hasDefect ?defect .
+      ?defect :isDecomposedBasedOn ?topologyRel3 .
+      ?defectElement3 :isGroupedInto ?defect .
+      ?defectElement3 :hasReductionFactor ?defectReduction3 .
+      ?defectReduction3 :hasValue ?value3 .
+      FILTER (?defectElement3 != ?defectElement && ?defectElement3 != ?defectElement2)
+    }
+    
+    OPTIONAL {
+      ?connector :hasDefect ?defect .
+      ?defect :isDecomposedBasedOn ?topologyRel4 .
+      ?defectElement4 :isGroupedInto ?defect .
+      ?defectElement4 :hasReductionFactor ?defectReduction4 .
+      ?defectReduction4 :hasValue ?value4 .
+      FILTER (?defectElement4 != ?defectElement && ?defectElement4 != ?defectElement2 && ?defectElement4 != ?defectElement3)
+    }
+    
+    OPTIONAL {
+      ?connector :hasDefect ?defect .
+      ?defect :isDecomposedBasedOn ?topologyRel5 .
+      ?defectElement5 :isGroupedInto ?defect .
+      ?defectElement5 :hasReductionFactor ?defectReduction5 .
+      ?defectReduction5 :hasValue ?value5 .
+      FILTER (?defectElement5 != ?defectElement && ?defectElement5 != ?defectElement2 && ?defectElement5 != ?defectElement3 && ?defectElement5 != ?defectElement4)
+    }
+  }
+  GROUP BY ?connector ?value1 ?value2 ?value3 ?value4 ?value5
+}

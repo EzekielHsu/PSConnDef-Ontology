@@ -1,0 +1,1544 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://precaststructureconnectiondefect.org/PSConnDef#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://precaststructureconnectiondefect.org/PSConnDef">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo>Created with TopBraid Composer</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="TopologyDescription">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BasicData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectElementTopologyRelationshipGather">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TopologyRelationshipGather"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BridgeElementSegment">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StructureElementSegment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectElementReductionFactor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ConnectionPerformanceReductionFactor"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TopologyRelationship">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TopologyData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorRemedialAction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="RemedialAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SteelBar">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BridgeElementSegmentComponent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectElementTopologyTypeClassifier">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TopologyTypeClassifier"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#RemedialAction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="EvaluationData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ConnectionPerformanceReductionFactor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#EvaluationData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RemedialActionReasoner">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DataReasoner"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorRiskLevelReasoner">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="RiskLevelReasoner"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PrecastConcreteBridge">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="PrecastStructure"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Bolt">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BridgeConnector"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectElementParameter">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BasicData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorRemedialActionReasoner">
+    <rdfs:subClassOf rdf:resource="#RemedialActionReasoner"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Defect">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DefectSystem"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="StructureElementSegmentComponent">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StructureSystem"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectElementReductionFactorCalculater">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ConnectionPerformanceReductionFactorCalculater"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PrecastStructure">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#StructureSystem"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TopologyType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#TopologyData"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Sleeve">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BridgeConnector"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#BridgeElementSegmentComponent">
+    <rdfs:subClassOf rdf:resource="#StructureElementSegmentComponent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Coordinate">
+    <rdfs:subClassOf rdf:resource="#TopologyDescription"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TopologyData">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Data"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorRiskLevel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="RiskLevel"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#StructureSystem">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Structure"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DataReasoner">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#EvaluationData">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Data"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#BridgeConnector">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Connector"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#TopologyRelationshipGather">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TopologyReasoner"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectElementTopologyRelationship">
+    <rdfs:subClassOf rdf:resource="#TopologyRelationship"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SteelBarEccentricity">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SleeveDefectElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SleeveGroup">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BridgeConnectorGroup"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorGroupRiskLevel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#RiskLevel"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CoordinateSystem">
+    <rdfs:subClassOf rdf:resource="#TopologyDescription"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SleeveDefectElement">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DefectElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorSystem">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Structure"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorReductionFactor">
+    <rdfs:subClassOf rdf:resource="#ConnectionPerformanceReductionFactor"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TopologyReasoner">
+    <rdfs:subClassOf rdf:resource="#DataReasoner"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorTopologyRelationshipGather">
+    <rdfs:subClassOf rdf:resource="#TopologyRelationshipGather"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorCoordinate">
+    <rdfs:subClassOf rdf:resource="#Coordinate"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorCoordinateSystem">
+    <rdfs:subClassOf rdf:resource="#CoordinateSystem"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Beam">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="BridgeElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DefectSystem">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Structure"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#BridgeConnectorGroup">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ConnectorGroup"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Tower">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BridgeElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DefectElement">
+    <rdfs:subClassOf rdf:resource="#DefectSystem"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorGroupReductionFactorCalculater">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ConnectionPerformanceReductionFactorCalculater"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#RiskLevel">
+    <rdfs:subClassOf rdf:resource="#EvaluationData"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorTopologyTypeClassifier">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#TopologyTypeClassifier"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#BasicData">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Data"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Column">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#BridgeElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#StructureElementSegment">
+    <rdfs:subClassOf rdf:resource="#StructureSystem"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorGroupReductionFactor">
+    <rdfs:subClassOf rdf:resource="#ConnectionPerformanceReductionFactor"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TowerSegment">
+    <rdfs:subClassOf rdf:resource="#BridgeElementSegment"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Structure">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:about="#RiskLevelReasoner">
+    <rdfs:subClassOf rdf:resource="#DataReasoner"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WeldGroup">
+    <rdfs:subClassOf rdf:resource="#BridgeConnectorGroup"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ConnectionPerformanceReductionFactorCalculater">
+    <rdfs:subClassOf rdf:resource="#DataReasoner"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ConnectorGroup">
+    <rdfs:subClassOf rdf:resource="#ConnectorSystem"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BoltGroup">
+    <rdfs:subClassOf rdf:resource="#BridgeConnectorGroup"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Plate">
+    <rdfs:subClassOf rdf:resource="#BridgeElementSegmentComponent"/>
+  </owl:Class>
+  <owl:Class rdf:about="#BridgeElement">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="StructureElement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Weld">
+    <rdfs:subClassOf rdf:resource="#BridgeConnector"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Cable">
+    <rdfs:subClassOf rdf:resource="#BridgeElementSegmentComponent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BeamSegment">
+    <rdfs:subClassOf rdf:resource="#BridgeElementSegment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorGroupRiskLevelReasoner">
+    <rdfs:subClassOf rdf:resource="#RiskLevelReasoner"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorReductionFactorCalculater">
+    <rdfs:subClassOf rdf:resource="#ConnectionPerformanceReductionFactorCalculater"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorTopologyType">
+    <rdfs:subClassOf rdf:resource="#TopologyType"/>
+  </owl:Class>
+  <owl:Class rdf:about="#TopologyTypeClassifier">
+    <rdfs:subClassOf rdf:resource="#TopologyReasoner"/>
+  </owl:Class>
+  <owl:Class rdf:about="#StructureElement">
+    <rdfs:subClassOf rdf:resource="#StructureSystem"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Connector">
+    <rdfs:subClassOf rdf:resource="#ConnectorSystem"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorGroupCoordinateSystem">
+    <rdfs:subClassOf rdf:resource="#CoordinateSystem"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Data">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectElementTopologyType">
+    <rdfs:subClassOf rdf:resource="#TopologyType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="UniformlyDistributedBubbles">
+    <rdfs:subClassOf rdf:resource="#SleeveDefectElement"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DefectElementCoordinate">
+    <rdfs:subClassOf rdf:resource="#Coordinate"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorGroupRemedialActionReasoner">
+    <rdfs:subClassOf rdf:resource="#RemedialActionReasoner"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorTopologyRelationship">
+    <rdfs:subClassOf rdf:resource="#TopologyRelationship"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ColumnSegment">
+    <rdfs:subClassOf rdf:resource="#BridgeElementSegment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ConnectorGroupRemedialAction">
+    <rdfs:subClassOf rdf:resource="#RemedialAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ValidArea">
+    <rdfs:subClassOf rdf:resource="#SleeveDefectElement"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasReductionFactor">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ConnectorGroup"/>
+          <owl:Class rdf:about="#Connector"/>
+          <owl:Class rdf:about="#DefectElement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="#ConnectionPerformanceReductionFactor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasConnectorTopologyType">
+    <rdfs:range rdf:resource="#ConnectorTopologyType"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="hasTopologyType"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Connector"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasConnectorCoordinateSystem">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="hasCoordinateSystem"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Connector"/>
+    <rdfs:range rdf:resource="#ConnectorCoordinateSystem"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="outputs">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ConnectionPerformanceReductionFactor"/>
+          <owl:Class rdf:about="#TopologyData"/>
+          <owl:Class rdf:about="#RiskLevel"/>
+          <owl:Class rdf:about="#RemedialAction"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#DataReasoner"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isGroupedInto">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#StructureElement"/>
+          <owl:Class rdf:about="#StructureElementSegment"/>
+          <owl:Class rdf:about="#StructureElementSegmentComponent"/>
+          <owl:Class rdf:about="#Connector"/>
+          <owl:Class rdf:about="#DefectElement"/>
+          <owl:Class rdf:about="#DefectElementTopologyType"/>
+          <owl:Class rdf:about="#ConnectorTopologyType"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#PrecastStructure"/>
+          <owl:Class rdf:about="#StructureElement"/>
+          <owl:Class rdf:about="#StructureElementSegment"/>
+          <owl:Class rdf:about="#ConnectorGroup"/>
+          <owl:Class rdf:about="#Defect"/>
+          <owl:Class rdf:about="#DefectElementTopologyRelationship"/>
+          <owl:Class rdf:about="#ConnectorTopologyRelationship"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasParameter">
+    <rdfs:range rdf:resource="#DefectElementParameter"/>
+    <rdfs:domain rdf:resource="#DefectElement"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRiskLevel"/>
+  <owl:ObjectProperty rdf:ID="hasCoordinate"/>
+  <owl:ObjectProperty rdf:ID="hasConnectorGroupCoordinateSystem">
+    <rdfs:range rdf:resource="#ConnectorGroupCoordinateSystem"/>
+    <rdfs:subPropertyOf rdf:resource="#hasCoordinateSystem"/>
+    <rdfs:domain rdf:resource="#ConnectorGroup"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isDecomposedBasedOn">
+    <rdfs:range rdf:resource="#TopologyData"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ConnectorGroup"/>
+          <owl:Class rdf:about="#Defect"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDefect">
+    <rdfs:domain rdf:resource="#Connector"/>
+    <rdfs:range rdf:resource="#Defect"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDefectElementCoordinate">
+    <rdfs:domain rdf:resource="#DefectElement"/>
+    <rdfs:subPropertyOf rdf:resource="#hasCoordinate"/>
+    <rdfs:range rdf:resource="#DefectElementCoordinate"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasConnectorGroupRiskLevel">
+    <rdfs:range rdf:resource="#ConnectorGroupRiskLevel"/>
+    <rdfs:subPropertyOf rdf:resource="#hasRiskLevel"/>
+    <rdfs:domain rdf:resource="#ConnectorGroup"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isDefinedIn">
+    <rdfs:range rdf:resource="#CoordinateSystem"/>
+    <rdfs:domain rdf:resource="#Coordinate"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasConnectorRiskLevel">
+    <rdfs:range rdf:resource="#ConnectorRiskLevel"/>
+    <rdfs:domain rdf:resource="#Connector"/>
+    <rdfs:subPropertyOf rdf:resource="#hasRiskLevel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasConnectorRemedialAction">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="hasRemedialAction"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Connector"/>
+    <rdfs:range rdf:resource="#ConnectorRemedialAction"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDefectElementTopologyType">
+    <rdfs:subPropertyOf rdf:resource="#hasTopologyType"/>
+    <rdfs:domain rdf:resource="#DefectElement"/>
+    <rdfs:range rdf:resource="#DefectElementTopologyType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasConnectorCoordinate">
+    <rdfs:domain rdf:resource="#Connector"/>
+    <rdfs:range rdf:resource="#ConnectorCoordinate"/>
+    <rdfs:subPropertyOf rdf:resource="#hasCoordinate"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isConnectedBy">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#ConnectorGroup"/>
+          <owl:Class rdf:about="#Connector"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#StructureElementSegment"/>
+          <owl:Class rdf:about="#StructureElementSegmentComponent"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasConnectorGroupRemedialAction">
+    <rdfs:subPropertyOf rdf:resource="#hasRemedialAction"/>
+    <rdfs:range rdf:resource="#ConnectorGroupRemedialAction"/>
+    <rdfs:domain rdf:resource="#ConnectorGroup"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isInputInto">
+    <rdfs:range rdf:resource="#DataReasoner"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#DefectElementParameter"/>
+          <owl:Class rdf:about="#RiskLevel"/>
+          <owl:Class rdf:about="#TopologyData"/>
+          <owl:Class rdf:about="#ConnectionPerformanceReductionFactor"/>
+          <owl:Class rdf:about="#TopologyDescription"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="hasSpecification">
+    <rdfs:domain rdf:resource="#StructureElementSegmentComponent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasThirdValue">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="hasValue"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#DefectElementCoordinate"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasSecondValue">
+    <rdfs:domain rdf:resource="#ConnectorCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasValue"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasDescription">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#RemedialAction"/>
+          <owl:Class rdf:about="#RiskLevel"/>
+          <owl:Class rdf:about="#TopologyData"/>
+          <owl:Class rdf:about="#CoordinateSystem"/>
+          <owl:Class rdf:about="#DataReasoner"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasValue">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#DefectElementParameter"/>
+          <owl:Class rdf:about="#ConnectionPerformanceReductionFactor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasFirstValue">
+    <rdfs:domain rdf:resource="#ConnectorCoordinate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasConnectorLength">
+    <rdfs:domain rdf:resource="#Connector"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <SteelBar rdf:ID="SteelBar_1_1_10">
+    <isGroupedInto>
+      <ColumnSegment rdf:ID="ColumnSegment_1_1">
+        <isConnectedBy>
+          <SleeveGroup rdf:ID="SleeveGroupCoordinateSystem_1_Group">
+            <hasConnectorGroupRemedialAction>
+              <ConnectorGroupRemedialAction rdf:ID="SleeveGroupCoordinateSystem_1_Group_RemedialAction">
+                <hasDescription>Regularly observation</hasDescription>
+              </ConnectorGroupRemedialAction>
+            </hasConnectorGroupRemedialAction>
+            <hasConnectorGroupCoordinateSystem>
+              <ConnectorGroupCoordinateSystem rdf:ID="SleeveGroupCoordinateSystem_1">
+                <hasDescription>Rectangular</hasDescription>
+                <isInputInto>
+                  <ConnectorTopologyTypeClassifier rdf:ID="ConnectorTopologyTypeClassifier_1">
+                    <outputs>
+                      <ConnectorTopologyType rdf:ID="Sleeve_3_TopologyType">
+                        <isInputInto>
+                          <ConnectorTopologyRelationshipGather rdf:ID="ConnectorTopologyRelationshipGather_1">
+                            <outputs>
+                              <ConnectorTopologyRelationship rdf:ID="SleeveGroupCoordinateSystem_1_Group_TopologyRel">
+                                <isInputInto>
+                                  <ConnectorGroupReductionFactorCalculater rdf:ID="ConnectorGroupReductionFactorCalculater_1">
+                                    <outputs>
+                                      <ConnectorGroupReductionFactor rdf:ID="SleeveGroupCoordinateSystem_1_Group_ReductionFactor">
+                                        <isInputInto>
+                                          <ConnectorGroupRiskLevelReasoner rdf:ID="ConnectorGroupRiskLevelReasoner_1">
+                                            <outputs>
+                                              <ConnectorGroupRiskLevel rdf:ID="SleeveGroupCoordinateSystem_1_Group_ReductionFactor_RiskLevel">
+                                                <isInputInto>
+                                                  <ConnectorGroupRemedialActionReasoner rdf:ID="ConnectorGroupRemedialActionReasoner_1">
+                                                    <outputs rdf:resource="#SleeveGroupCoordinateSystem_1_Group_RemedialAction"/>
+                                                  </ConnectorGroupRemedialActionReasoner>
+                                                </isInputInto>
+                                                <hasDescription
+                                                >Medium</hasDescription>
+                                              </ConnectorGroupRiskLevel>
+                                            </outputs>
+                                          </ConnectorGroupRiskLevelReasoner>
+                                        </isInputInto>
+                                        <hasValue rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#float"
+                                        >0.927365</hasValue>
+                                      </ConnectorGroupReductionFactor>
+                                    </outputs>
+                                  </ConnectorGroupReductionFactorCalculater>
+                                </isInputInto>
+                                <hasDescription>End + Edge + Edge + Edge + Edge + Edge + End + Edge + Edge + Edge</hasDescription>
+                              </ConnectorTopologyRelationship>
+                            </outputs>
+                          </ConnectorTopologyRelationshipGather>
+                        </isInputInto>
+                        <hasDescription>Edge</hasDescription>
+                        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+                      </ConnectorTopologyType>
+                    </outputs>
+                  </ConnectorTopologyTypeClassifier>
+                </isInputInto>
+                <isInputInto rdf:resource="#ConnectorTopologyRelationshipGather_1"/>
+              </ConnectorGroupCoordinateSystem>
+            </hasConnectorGroupCoordinateSystem>
+            <hasReductionFactor rdf:resource="#SleeveGroupCoordinateSystem_1_Group_ReductionFactor"/>
+            <hasConnectorGroupRiskLevel rdf:resource="#SleeveGroupCoordinateSystem_1_Group_ReductionFactor_RiskLevel"/>
+            <isDecomposedBasedOn rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+          </SleeveGroup>
+        </isConnectedBy>
+        <isGroupedInto>
+          <Column rdf:ID="Column_1">
+            <isGroupedInto>
+              <PrecastConcreteBridge rdf:ID="PrecastBridge_1"/>
+            </isGroupedInto>
+          </Column>
+        </isGroupedInto>
+      </ColumnSegment>
+    </isGroupedInto>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_10">
+        <hasReductionFactor>
+          <ConnectorReductionFactor rdf:ID="Sleeve_10_ReductionFactor">
+            <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+            >1.00000</hasValue>
+          </ConnectorReductionFactor>
+        </hasReductionFactor>
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_10">
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >1401.6</hasFirstValue>
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <hasSpecification>GTB4Z 16/16Q</hasSpecification>
+        <hasConnectorTopologyType>
+          <ConnectorTopologyType rdf:ID="Sleeve_10_TopologyType">
+            <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+            <hasDescription>End</hasDescription>
+          </ConnectorTopologyType>
+        </hasConnectorTopologyType>
+        <hasConnectorCoordinateSystem>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_10">
+            <hasDescription>Linear</hasDescription>
+          </ConnectorCoordinateSystem>
+        </hasConnectorCoordinateSystem>
+        <hasConnectorRemedialAction>
+          <ConnectorRemedialAction rdf:ID="Sleeve_10_RemedialAction">
+            <hasDescription>No action</hasDescription>
+          </ConnectorRemedialAction>
+        </hasConnectorRemedialAction>
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+        <hasConnectorRiskLevel>
+          <ConnectorRiskLevel rdf:ID="Sleeve_10_ReductionFactor_RiskLevel">
+            <hasDescription>Low</hasDescription>
+          </ConnectorRiskLevel>
+        </hasConnectorRiskLevel>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+      </Sleeve>
+    </isConnectedBy>
+  </SteelBar>
+  <Beam rdf:ID="Beam_3">
+    <isGroupedInto rdf:resource="#PrecastBridge_1"/>
+  </Beam>
+  <SteelBar rdf:ID="SteelBar_1_2_8">
+    <isGroupedInto>
+      <ColumnSegment rdf:ID="ColumnSegment_1_2">
+        <isConnectedBy rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <isGroupedInto rdf:resource="#Column_1"/>
+      </ColumnSegment>
+    </isGroupedInto>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_8">
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_8">
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >1158.3</hasFirstValue>
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <hasDefect>
+          <Defect rdf:ID="Sleeve_8_Defect">
+            <isDecomposedBasedOn>
+              <DefectElementTopologyRelationship rdf:ID="Sleeve_8_TopologyRel">
+                <hasDescription>Steel bar eccentricity</hasDescription>
+              </DefectElementTopologyRelationship>
+            </isDecomposedBasedOn>
+          </Defect>
+        </hasDefect>
+        <hasConnectorRemedialAction>
+          <ConnectorRemedialAction rdf:ID="Sleeve_8_RemedialAction">
+            <hasDescription>No action</hasDescription>
+          </ConnectorRemedialAction>
+        </hasConnectorRemedialAction>
+        <hasReductionFactor>
+          <ConnectorReductionFactor rdf:ID="Sleeve_8_ReductionFactor">
+            <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+            >1.0000</hasValue>
+          </ConnectorReductionFactor>
+        </hasReductionFactor>
+        <hasConnectorRiskLevel>
+          <ConnectorRiskLevel rdf:ID="Sleeve_8_ReductionFactor_RiskLevel">
+            <hasDescription>Low</hasDescription>
+          </ConnectorRiskLevel>
+        </hasConnectorRiskLevel>
+        <hasConnectorCoordinateSystem>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_8">
+            <hasDescription>Linear</hasDescription>
+          </ConnectorCoordinateSystem>
+        </hasConnectorCoordinateSystem>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+        <hasSpecification>GTB4Z 16/16Q</hasSpecification>
+        <hasConnectorTopologyType>
+          <ConnectorTopologyType rdf:ID="Sleeve_8_TopologyType">
+            <hasDescription>Edge</hasDescription>
+            <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+          </ConnectorTopologyType>
+        </hasConnectorTopologyType>
+      </Sleeve>
+    </isConnectedBy>
+  </SteelBar>
+  <Beam rdf:ID="Beam_2">
+    <isGroupedInto rdf:resource="#PrecastBridge_1"/>
+  </Beam>
+  <SteelBar rdf:ID="SteelBar_1_2_9">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_2"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_9">
+        <hasSpecification>GTB4Z 16/16Q</hasSpecification>
+        <hasConnectorRemedialAction>
+          <ConnectorRemedialAction rdf:ID="Sleeve_9_RemedialAction">
+            <hasDescription>Regularly observation</hasDescription>
+          </ConnectorRemedialAction>
+        </hasConnectorRemedialAction>
+        <hasConnectorTopologyType>
+          <ConnectorTopologyType rdf:ID="Sleeve_9_TopologyType">
+            <hasDescription>Edge</hasDescription>
+            <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+          </ConnectorTopologyType>
+        </hasConnectorTopologyType>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <hasConnectorCoordinateSystem>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_9">
+            <hasDescription>Linear</hasDescription>
+          </ConnectorCoordinateSystem>
+        </hasConnectorCoordinateSystem>
+        <hasDefect>
+          <Defect rdf:ID="Sleeve_9_Defect">
+            <isDecomposedBasedOn>
+              <DefectElementTopologyRelationship rdf:ID="Sleeve_9_TopologyRel">
+                <hasDescription>Middle</hasDescription>
+              </DefectElementTopologyRelationship>
+            </isDecomposedBasedOn>
+          </Defect>
+        </hasDefect>
+        <hasReductionFactor>
+          <ConnectorReductionFactor rdf:ID="Sleeve_9_ReductionFactor">
+            <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >0.91346157</hasValue>
+          </ConnectorReductionFactor>
+        </hasReductionFactor>
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_9">
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >1277.2</hasFirstValue>
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <hasConnectorRiskLevel>
+          <ConnectorRiskLevel rdf:ID="Sleeve_9_ReductionFactor_RiskLevel">
+            <hasDescription>Medium</hasDescription>
+          </ConnectorRiskLevel>
+        </hasConnectorRiskLevel>
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+      </Sleeve>
+    </isConnectedBy>
+  </SteelBar>
+  <ValidArea rdf:ID="ValidArea_3_1">
+    <hasDefectElementCoordinate>
+      <DefectElementCoordinate rdf:ID="ValidAreaCoordinate_3_1">
+        <isInputInto>
+          <DefectElementTopologyTypeClassifier rdf:ID="DefectElementTopologyTypeClassifier_1">
+            <outputs>
+              <DefectElementTopologyType rdf:ID="ValidArea_3_1_TopologyType">
+                <isInputInto>
+                  <DefectElementReductionFactorCalculater rdf:ID="DefectElementReductionFactorCalculater_1">
+                    <outputs>
+                      <DefectElementReductionFactor rdf:ID="ValidArea_3_1_ReductionFactor">
+                        <isInputInto>
+                          <ConnectorReductionFactorCalculater rdf:ID="ConnectorReductionFactorCalculater_1">
+                            <outputs>
+                              <ConnectorReductionFactor rdf:ID="Sleeve_3_ReductionFactor">
+                                <isInputInto rdf:resource="#ConnectorGroupReductionFactorCalculater_1"/>
+                                <isInputInto>
+                                  <ConnectorRiskLevelReasoner rdf:ID="ConnectorRiskLevelReasoner_1">
+                                    <outputs>
+                                      <ConnectorRiskLevel rdf:ID="Sleeve_3_ReductionFactor_RiskLevel">
+                                        <isInputInto>
+                                          <ConnectorRemedialActionReasoner rdf:ID="ConnectorRemedialActionReasoner_1">
+                                            <outputs>
+                                              <ConnectorRemedialAction rdf:ID="Sleeve_3_RemedialAction">
+                                                <hasDescription
+                                                >Reinforcement</hasDescription>
+                                              </ConnectorRemedialAction>
+                                            </outputs>
+                                          </ConnectorRemedialActionReasoner>
+                                        </isInputInto>
+                                        <hasDescription>High</hasDescription>
+                                      </ConnectorRiskLevel>
+                                    </outputs>
+                                  </ConnectorRiskLevelReasoner>
+                                </isInputInto>
+                                <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+                                >0.8546828</hasValue>
+                              </ConnectorReductionFactor>
+                            </outputs>
+                          </ConnectorReductionFactorCalculater>
+                        </isInputInto>
+                        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+                        >0.8629806</hasValue>
+                      </DefectElementReductionFactor>
+                    </outputs>
+                  </DefectElementReductionFactorCalculater>
+                </isInputInto>
+                <isInputInto>
+                  <DefectElementTopologyRelationshipGather rdf:ID="DefectElementTopologyRelationshipGather_1">
+                    <outputs>
+                      <DefectElementTopologyRelationship rdf:ID="Sleeve_3_TopologyRel">
+                        <isInputInto rdf:resource="#ConnectorReductionFactorCalculater_1"/>
+                        <hasDescription>Bottom + Middle</hasDescription>
+                      </DefectElementTopologyRelationship>
+                    </outputs>
+                  </DefectElementTopologyRelationshipGather>
+                </isInputInto>
+                <isGroupedInto rdf:resource="#Sleeve_3_TopologyRel"/>
+                <hasDescription>Middle</hasDescription>
+              </DefectElementTopologyType>
+            </outputs>
+          </DefectElementTopologyTypeClassifier>
+        </isInputInto>
+        <hasThirdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >-24.6154</hasThirdValue>
+        <isDefinedIn>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_3">
+            <hasDescription>Linear</hasDescription>
+            <isInputInto rdf:resource="#DefectElementTopologyRelationshipGather_1"/>
+          </ConnectorCoordinateSystem>
+        </isDefinedIn>
+      </DefectElementCoordinate>
+    </hasDefectElementCoordinate>
+    <hasParameter>
+      <DefectElementParameter rdf:ID="ValidAreaLength_3_1">
+        <isInputInto rdf:resource="#DefectElementReductionFactorCalculater_1"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >43.8462</hasValue>
+      </DefectElementParameter>
+    </hasParameter>
+    <hasDefectElementTopologyType rdf:resource="#ValidArea_3_1_TopologyType"/>
+    <isGroupedInto>
+      <Defect rdf:ID="Sleeve_3_Defect">
+        <isDecomposedBasedOn rdf:resource="#Sleeve_3_TopologyRel"/>
+      </Defect>
+    </isGroupedInto>
+    <hasReductionFactor rdf:resource="#ValidArea_3_1_ReductionFactor"/>
+  </ValidArea>
+  <SteelBar rdf:ID="SteelBar_1_1_1">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_1"/>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_1">
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+        <hasSpecification>GTB4Z 16/16Q</hasSpecification>
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_1">
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >300</hasFirstValue>
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <hasDefect>
+          <Defect rdf:ID="Sleeve_1_Defect">
+            <isDecomposedBasedOn>
+              <DefectElementTopologyRelationship rdf:ID="Sleeve_1_TopologyRel">
+                <hasDescription>Middle</hasDescription>
+              </DefectElementTopologyRelationship>
+            </isDecomposedBasedOn>
+          </Defect>
+        </hasDefect>
+        <hasConnectorRemedialAction>
+          <ConnectorRemedialAction rdf:ID="Sleeve_1_RemedialAction">
+            <hasDescription>Reinforcement</hasDescription>
+          </ConnectorRemedialAction>
+        </hasConnectorRemedialAction>
+        <hasConnectorTopologyType>
+          <ConnectorTopologyType rdf:ID="Sleeve_1_TopologyType">
+            <isInputInto rdf:resource="#ConnectorTopologyRelationshipGather_1"/>
+            <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+            <hasDescription>End</hasDescription>
+          </ConnectorTopologyType>
+        </hasConnectorTopologyType>
+        <hasReductionFactor>
+          <ConnectorReductionFactor rdf:ID="Sleeve_1_ReductionFactor">
+            <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >0.86057687</hasValue>
+          </ConnectorReductionFactor>
+        </hasReductionFactor>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <hasConnectorRiskLevel>
+          <ConnectorRiskLevel rdf:ID="Sleeve_1_ReductionFactor_RiskLevel">
+            <hasDescription>High</hasDescription>
+          </ConnectorRiskLevel>
+        </hasConnectorRiskLevel>
+        <hasConnectorCoordinateSystem>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_1">
+            <hasDescription>Linear</hasDescription>
+          </ConnectorCoordinateSystem>
+        </hasConnectorCoordinateSystem>
+      </Sleeve>
+    </isConnectedBy>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+  </SteelBar>
+  <Beam rdf:ID="Beam_1">
+    <isGroupedInto rdf:resource="#PrecastBridge_1"/>
+  </Beam>
+  <ValidArea rdf:ID="ValidArea_1">
+    <hasParameter>
+      <DefectElementParameter rdf:ID="ValidAreaLength_1">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >44.6154</hasValue>
+      </DefectElementParameter>
+    </hasParameter>
+    <hasDefectElementTopologyType>
+      <DefectElementTopologyType rdf:ID="ValidArea_1_TopologyType">
+        <hasDescription>Middle</hasDescription>
+        <isGroupedInto rdf:resource="#Sleeve_1_TopologyRel"/>
+      </DefectElementTopologyType>
+    </hasDefectElementTopologyType>
+    <hasDefectElementCoordinate>
+      <DefectElementCoordinate rdf:ID="ValidAreaCoordinate_1">
+        <hasThirdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >-13.8462</hasThirdValue>
+        <isDefinedIn rdf:resource="#SleeveCoordinateSystem_1"/>
+      </DefectElementCoordinate>
+    </hasDefectElementCoordinate>
+    <isGroupedInto rdf:resource="#Sleeve_1_Defect"/>
+    <hasReductionFactor>
+      <DefectElementReductionFactor rdf:ID="ValidArea_1_ReductionFactor">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >0.86057687</hasValue>
+      </DefectElementReductionFactor>
+    </hasReductionFactor>
+  </ValidArea>
+  <Column rdf:ID="Column_3">
+    <isGroupedInto rdf:resource="#PrecastBridge_1"/>
+  </Column>
+  <SteelBar rdf:ID="SteelBar_1_2_10">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_2"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy rdf:resource="#Sleeve_10"/>
+  </SteelBar>
+  <SteelBar rdf:ID="SteelBar_1_1_2">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_1"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_2">
+        <hasSpecification>GTB4Z 16/16Q</hasSpecification>
+        <hasConnectorTopologyType>
+          <ConnectorTopologyType rdf:ID="Sleeve_2_TopologyType">
+            <isInputInto rdf:resource="#ConnectorTopologyRelationshipGather_1"/>
+            <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+            <hasDescription>Edge</hasDescription>
+          </ConnectorTopologyType>
+        </hasConnectorTopologyType>
+        <hasDefect>
+          <Defect rdf:ID="Sleeve_2_Defect">
+            <isDecomposedBasedOn>
+              <DefectElementTopologyRelationship rdf:ID="Sleeve_2_TopologyRel">
+                <hasDescription>Top + Bottom</hasDescription>
+              </DefectElementTopologyRelationship>
+            </isDecomposedBasedOn>
+          </Defect>
+        </hasDefect>
+        <hasConnectorCoordinateSystem>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_2">
+            <hasDescription>Linear</hasDescription>
+          </ConnectorCoordinateSystem>
+        </hasConnectorCoordinateSystem>
+        <hasReductionFactor>
+          <ConnectorReductionFactor rdf:ID="Sleeve_2_ReductionFactor">
+            <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >0.88221157</hasValue>
+          </ConnectorReductionFactor>
+        </hasReductionFactor>
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_2">
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >420.5</hasFirstValue>
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <hasConnectorRemedialAction>
+          <ConnectorRemedialAction rdf:ID="Sleeve_2_RemedialAction">
+            <hasDescription>Reinforcement</hasDescription>
+          </ConnectorRemedialAction>
+        </hasConnectorRemedialAction>
+        <hasConnectorRiskLevel>
+          <ConnectorRiskLevel rdf:ID="Sleeve_2_ReductionFactor_RiskLevel">
+            <hasDescription>High</hasDescription>
+          </ConnectorRiskLevel>
+        </hasConnectorRiskLevel>
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+      </Sleeve>
+    </isConnectedBy>
+  </SteelBar>
+  <Column rdf:ID="Column_2">
+    <isGroupedInto rdf:resource="#PrecastBridge_1"/>
+  </Column>
+  <ValidArea rdf:ID="ValidArea_2_2">
+    <isGroupedInto rdf:resource="#Sleeve_2_Defect"/>
+    <hasDefectElementCoordinate>
+      <DefectElementCoordinate rdf:ID="ValidAreaCoordinate_2_2">
+        <isDefinedIn rdf:resource="#SleeveCoordinateSystem_2"/>
+        <hasThirdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >41.5385</hasThirdValue>
+      </DefectElementCoordinate>
+    </hasDefectElementCoordinate>
+    <hasParameter>
+      <DefectElementParameter rdf:ID="ValidAreaLength_2_2">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >37.6923</hasValue>
+      </DefectElementParameter>
+    </hasParameter>
+    <hasReductionFactor>
+      <DefectElementReductionFactor rdf:ID="ValidArea_2_2_ReductionFactor">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >0.88221157</hasValue>
+      </DefectElementReductionFactor>
+    </hasReductionFactor>
+    <hasDefectElementTopologyType>
+      <DefectElementTopologyType rdf:ID="ValidArea_2_2_TopologyType">
+        <hasDescription>Bottom</hasDescription>
+        <isGroupedInto rdf:resource="#Sleeve_2_TopologyRel"/>
+      </DefectElementTopologyType>
+    </hasDefectElementTopologyType>
+  </ValidArea>
+  <ValidArea rdf:ID="ValidArea_2_1">
+    <hasParameter>
+      <DefectElementParameter rdf:ID="ValidAreaLength_2_1">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >35.3846</hasValue>
+      </DefectElementParameter>
+    </hasParameter>
+    <isGroupedInto rdf:resource="#Sleeve_2_Defect"/>
+    <hasDefectElementTopologyType>
+      <DefectElementTopologyType rdf:ID="ValidArea_2_1_TopologyType">
+        <isGroupedInto rdf:resource="#Sleeve_2_TopologyRel"/>
+        <hasDescription>Top</hasDescription>
+      </DefectElementTopologyType>
+    </hasDefectElementTopologyType>
+    <hasDefectElementCoordinate>
+      <DefectElementCoordinate rdf:ID="ValidAreaCoordinate_2_1">
+        <hasThirdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >-33.0769</hasThirdValue>
+        <isDefinedIn rdf:resource="#SleeveCoordinateSystem_2"/>
+      </DefectElementCoordinate>
+    </hasDefectElementCoordinate>
+    <hasReductionFactor>
+      <DefectElementReductionFactor rdf:ID="ValidArea_2_1_ReductionFactor">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+        >1.0</hasValue>
+      </DefectElementReductionFactor>
+    </hasReductionFactor>
+  </ValidArea>
+  <Column rdf:ID="Column_4">
+    <isGroupedInto rdf:resource="#PrecastBridge_1"/>
+  </Column>
+  <ValidArea rdf:ID="ValidArea_5">
+    <hasReductionFactor>
+      <DefectElementReductionFactor rdf:ID="ValidArea_5_ReductionFactor">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >0.8125</hasValue>
+      </DefectElementReductionFactor>
+    </hasReductionFactor>
+    <isGroupedInto>
+      <Defect rdf:ID="Sleeve_5_Defect">
+        <isDecomposedBasedOn>
+          <DefectElementTopologyRelationship rdf:ID="Sleeve_5_TopologyRel">
+            <hasDescription>Middle</hasDescription>
+          </DefectElementTopologyRelationship>
+        </isDecomposedBasedOn>
+      </Defect>
+    </isGroupedInto>
+    <hasParameter>
+      <DefectElementParameter rdf:ID="ValidAreaLength_5">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >60</hasValue>
+      </DefectElementParameter>
+    </hasParameter>
+    <hasDefectElementCoordinate>
+      <DefectElementCoordinate rdf:ID="ValidAreaCoordinate_5">
+        <hasThirdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >-4.6154</hasThirdValue>
+        <isDefinedIn>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_5">
+            <hasDescription>Linear</hasDescription>
+          </ConnectorCoordinateSystem>
+        </isDefinedIn>
+      </DefectElementCoordinate>
+    </hasDefectElementCoordinate>
+    <hasDefectElementTopologyType>
+      <DefectElementTopologyType rdf:ID="ValidArea_5_TopologyType">
+        <isGroupedInto rdf:resource="#Sleeve_5_TopologyRel"/>
+        <hasDescription>Middle</hasDescription>
+      </DefectElementTopologyType>
+    </hasDefectElementTopologyType>
+  </ValidArea>
+  <SteelBar rdf:ID="SteelBar_1_1_5">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_1"/>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_5">
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_5">
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >783.5</hasFirstValue>
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <hasConnectorTopologyType>
+          <ConnectorTopologyType rdf:ID="Sleeve_5_TopologyType">
+            <hasDescription>Edge</hasDescription>
+            <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+          </ConnectorTopologyType>
+        </hasConnectorTopologyType>
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+        <hasConnectorRemedialAction>
+          <ConnectorRemedialAction rdf:ID="Sleeve_5_RemedialAction">
+            <hasDescription>Reinforcement</hasDescription>
+          </ConnectorRemedialAction>
+        </hasConnectorRemedialAction>
+        <hasConnectorRiskLevel>
+          <ConnectorRiskLevel rdf:ID="Sleeve_5_ReductionFactor_RiskLevel">
+            <hasDescription>High</hasDescription>
+          </ConnectorRiskLevel>
+        </hasConnectorRiskLevel>
+        <hasSpecification>GTB4Z 16/16Q</hasSpecification>
+        <hasConnectorCoordinateSystem rdf:resource="#SleeveCoordinateSystem_5"/>
+        <hasReductionFactor>
+          <ConnectorReductionFactor rdf:ID="Sleeve_5_ReductionFactor">
+            <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >0.8125</hasValue>
+          </ConnectorReductionFactor>
+        </hasReductionFactor>
+        <hasDefect rdf:resource="#Sleeve_5_Defect"/>
+      </Sleeve>
+    </isConnectedBy>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+  </SteelBar>
+  <SteelBar rdf:ID="SteelBar_1_2_2">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_2"/>
+    <isConnectedBy rdf:resource="#Sleeve_2"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+  </SteelBar>
+  <SteelBar rdf:ID="SteelBar_1_1_6">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_1"/>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_6">
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+        <hasDefect>
+          <Defect rdf:ID="Sleeve_6_Defect">
+            <isDecomposedBasedOn>
+              <DefectElementTopologyRelationship rdf:ID="Sleeve_6_TopologyRel">
+                <hasDescription>Middle</hasDescription>
+              </DefectElementTopologyRelationship>
+            </isDecomposedBasedOn>
+          </Defect>
+        </hasDefect>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <hasReductionFactor>
+          <ConnectorReductionFactor rdf:ID="Sleeve_6_ReductionFactor">
+            <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >0.9495194</hasValue>
+          </ConnectorReductionFactor>
+        </hasReductionFactor>
+        <hasConnectorRemedialAction>
+          <ConnectorRemedialAction rdf:ID="Sleeve_6_RemedialAction">
+            <hasDescription>Regularly observation</hasDescription>
+          </ConnectorRemedialAction>
+        </hasConnectorRemedialAction>
+        <hasConnectorCoordinateSystem>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_6">
+            <hasDescription>Linear</hasDescription>
+          </ConnectorCoordinateSystem>
+        </hasConnectorCoordinateSystem>
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_6">
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >914.2</hasFirstValue>
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <hasConnectorTopologyType>
+          <ConnectorTopologyType rdf:ID="Sleeve_6_TopologyType">
+            <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+            <hasDescription>Edge</hasDescription>
+          </ConnectorTopologyType>
+        </hasConnectorTopologyType>
+        <hasSpecification>GTB4Z 16/16Q</hasSpecification>
+        <hasConnectorRiskLevel>
+          <ConnectorRiskLevel rdf:ID="Sleeve_6_ReductionFactor_RiskLevel">
+            <hasDescription>Medium</hasDescription>
+          </ConnectorRiskLevel>
+        </hasConnectorRiskLevel>
+      </Sleeve>
+    </isConnectedBy>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+  </SteelBar>
+  <ValidArea rdf:ID="ValidArea_6">
+    <hasDefectElementCoordinate>
+      <DefectElementCoordinate rdf:ID="ValidAreaCoordinate_6">
+        <hasThirdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >10</hasThirdValue>
+        <isDefinedIn rdf:resource="#SleeveCoordinateSystem_6"/>
+      </DefectElementCoordinate>
+    </hasDefectElementCoordinate>
+    <hasDefectElementTopologyType>
+      <DefectElementTopologyType rdf:ID="ValidArea_6_TopologyType">
+        <hasDescription>Middle</hasDescription>
+        <isGroupedInto rdf:resource="#Sleeve_6_TopologyRel"/>
+      </DefectElementTopologyType>
+    </hasDefectElementTopologyType>
+    <isGroupedInto rdf:resource="#Sleeve_6_Defect"/>
+    <hasReductionFactor>
+      <DefectElementReductionFactor rdf:ID="ValidArea_6_ReductionFactor">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >0.9495194</hasValue>
+      </DefectElementReductionFactor>
+    </hasReductionFactor>
+    <hasParameter>
+      <DefectElementParameter rdf:ID="ValidAreaLength_6">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >16.1538</hasValue>
+      </DefectElementParameter>
+    </hasParameter>
+  </ValidArea>
+  <SteelBar rdf:ID="SteelBar_1_2_3">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_2"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_3">
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+        <hasConnectorCoordinateSystem rdf:resource="#SleeveCoordinateSystem_3"/>
+        <hasConnectorRemedialAction rdf:resource="#Sleeve_3_RemedialAction"/>
+        <hasDefect rdf:resource="#Sleeve_3_Defect"/>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_3">
+            <isInputInto rdf:resource="#ConnectorTopologyTypeClassifier_1"/>
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >555.9</hasFirstValue>
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <hasConnectorRiskLevel rdf:resource="#Sleeve_3_ReductionFactor_RiskLevel"/>
+        <hasReductionFactor rdf:resource="#Sleeve_3_ReductionFactor"/>
+        <hasConnectorTopologyType rdf:resource="#Sleeve_3_TopologyType"/>
+      </Sleeve>
+    </isConnectedBy>
+  </SteelBar>
+  <Tower rdf:ID="Tower_1">
+    <isGroupedInto rdf:resource="#PrecastBridge_1"/>
+  </Tower>
+  <SteelBarEccentricity rdf:ID="SteelBarEccentricity_8">
+    <isGroupedInto rdf:resource="#Sleeve_8_Defect"/>
+    <hasDefectElementTopologyType>
+      <DefectElementTopologyType rdf:ID="SteelBarEccentricity_8_TopologyType">
+        <isGroupedInto rdf:resource="#Sleeve_8_TopologyRel"/>
+        <hasDescription>Steel bar eccentricity</hasDescription>
+      </DefectElementTopologyType>
+    </hasDefectElementTopologyType>
+    <hasDefectElementCoordinate>
+      <DefectElementCoordinate rdf:ID="SteelBarEccentricityCoordinate_8">
+        <isDefinedIn rdf:resource="#SleeveCoordinateSystem_8"/>
+      </DefectElementCoordinate>
+    </hasDefectElementCoordinate>
+    <hasReductionFactor>
+      <DefectElementReductionFactor rdf:ID="SteelBarEccentricity_8_ReductionFactor">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+        >1</hasValue>
+      </DefectElementReductionFactor>
+    </hasReductionFactor>
+  </SteelBarEccentricity>
+  <SteelBar rdf:ID="SteelBar_1_1_3">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_1"/>
+    <isConnectedBy rdf:resource="#Sleeve_3"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+  </SteelBar>
+  <ValidArea rdf:ID="ValidArea_3_2">
+    <hasDefectElementTopologyType>
+      <DefectElementTopologyType rdf:ID="ValidArea_3_2_TopologyType">
+        <isInputInto rdf:resource="#DefectElementTopologyRelationshipGather_1"/>
+        <hasDescription>Bottom</hasDescription>
+        <isGroupedInto rdf:resource="#Sleeve_3_TopologyRel"/>
+      </DefectElementTopologyType>
+    </hasDefectElementTopologyType>
+    <hasReductionFactor>
+      <DefectElementReductionFactor rdf:ID="ValidArea_3_2_ReductionFactor">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >0.9903847</hasValue>
+      </DefectElementReductionFactor>
+    </hasReductionFactor>
+    <hasDefectElementCoordinate>
+      <DefectElementCoordinate rdf:ID="ValidAreaCoordinate_3_2">
+        <hasThirdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >35.3846</hasThirdValue>
+        <isDefinedIn rdf:resource="#SleeveCoordinateSystem_3"/>
+      </DefectElementCoordinate>
+    </hasDefectElementCoordinate>
+    <isGroupedInto rdf:resource="#Sleeve_3_Defect"/>
+    <hasParameter>
+      <DefectElementParameter rdf:ID="ValidAreaLength_3_2">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >3.0769</hasValue>
+      </DefectElementParameter>
+    </hasParameter>
+  </ValidArea>
+  <SteelBar rdf:ID="SteelBar_1_1_4">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_1"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_4">
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_4">
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >670.9</hasFirstValue>
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <hasReductionFactor>
+          <ConnectorReductionFactor rdf:ID="Sleeve_4_ReductionFactor">
+            <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+            >1.00000</hasValue>
+          </ConnectorReductionFactor>
+        </hasReductionFactor>
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+        <hasConnectorCoordinateSystem>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_4">
+            <hasDescription>Linear</hasDescription>
+          </ConnectorCoordinateSystem>
+        </hasConnectorCoordinateSystem>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <hasConnectorRemedialAction>
+          <ConnectorRemedialAction rdf:ID="Sleeve_4_RemedialAction">
+            <hasDescription>No action</hasDescription>
+          </ConnectorRemedialAction>
+        </hasConnectorRemedialAction>
+        <hasConnectorRiskLevel>
+          <ConnectorRiskLevel rdf:ID="Sleeve_4_ReductionFactor_RiskLevel">
+            <hasDescription>Low</hasDescription>
+          </ConnectorRiskLevel>
+        </hasConnectorRiskLevel>
+        <hasConnectorTopologyType>
+          <ConnectorTopologyType rdf:ID="Sleeve_4_TopologyType">
+            <hasDescription>Edge</hasDescription>
+            <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+          </ConnectorTopologyType>
+        </hasConnectorTopologyType>
+        <hasSpecification>GTB4Z 16/16Q</hasSpecification>
+      </Sleeve>
+    </isConnectedBy>
+  </SteelBar>
+  <SteelBar rdf:ID="SteelBar_1_2_1">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_2"/>
+    <isConnectedBy rdf:resource="#Sleeve_1"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+  </SteelBar>
+  <ColumnSegment rdf:ID="ColumnSegment_1_4">
+    <isGroupedInto rdf:resource="#Column_1"/>
+  </ColumnSegment>
+  <SteelBar rdf:ID="SteelBar_1_2_6">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_2"/>
+    <isConnectedBy rdf:resource="#Sleeve_6"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+  </SteelBar>
+  <ValidArea rdf:ID="ValidArea_9">
+    <hasReductionFactor>
+      <DefectElementReductionFactor rdf:ID="ValidArea_9_ReductionFactor">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >0.91346157</hasValue>
+      </DefectElementReductionFactor>
+    </hasReductionFactor>
+    <hasDefectElementTopologyType>
+      <DefectElementTopologyType rdf:ID="ValidArea_9_TopologyType">
+        <isGroupedInto rdf:resource="#Sleeve_9_TopologyRel"/>
+        <hasDescription>Middle</hasDescription>
+      </DefectElementTopologyType>
+    </hasDefectElementTopologyType>
+    <hasDefectElementCoordinate>
+      <DefectElementCoordinate rdf:ID="ValidAreaCoordinate_9">
+        <hasThirdValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >11.5385</hasThirdValue>
+        <isDefinedIn rdf:resource="#SleeveCoordinateSystem_9"/>
+      </DefectElementCoordinate>
+    </hasDefectElementCoordinate>
+    <hasParameter>
+      <DefectElementParameter rdf:ID="ValidAreaLength_9">
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >27.6923</hasValue>
+      </DefectElementParameter>
+    </hasParameter>
+    <isGroupedInto rdf:resource="#Sleeve_9_Defect"/>
+  </ValidArea>
+  <SteelBar rdf:ID="SteelBar_1_1_9">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_1"/>
+    <isConnectedBy rdf:resource="#Sleeve_9"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+  </SteelBar>
+  <ColumnSegment rdf:ID="ColumnSegment_1_3">
+    <isGroupedInto rdf:resource="#Column_1"/>
+  </ColumnSegment>
+  <SteelBar rdf:ID="SteelBar_1_2_7">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_2"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy>
+      <Sleeve rdf:ID="Sleeve_7">
+        <hasConnectorRemedialAction>
+          <ConnectorRemedialAction rdf:ID="Sleeve_7_RemedialAction">
+            <hasDescription>No action</hasDescription>
+          </ConnectorRemedialAction>
+        </hasConnectorRemedialAction>
+        <hasConnectorCoordinate>
+          <ConnectorCoordinate rdf:ID="SleeveCoordinate_7">
+            <hasSecondValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >81.25</hasSecondValue>
+            <hasFirstValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >1037.8</hasFirstValue>
+            <isDefinedIn rdf:resource="#SleeveGroupCoordinateSystem_1"/>
+          </ConnectorCoordinate>
+        </hasConnectorCoordinate>
+        <hasSpecification>GTB4Z 16/16Q</hasSpecification>
+        <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group"/>
+        <hasConnectorLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >160</hasConnectorLength>
+        <hasReductionFactor>
+          <ConnectorReductionFactor rdf:ID="Sleeve_7_ReductionFactor">
+            <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+            >1.00000</hasValue>
+          </ConnectorReductionFactor>
+        </hasReductionFactor>
+        <hasConnectorRiskLevel>
+          <ConnectorRiskLevel rdf:ID="Sleeve_7_ReductionFactor_RiskLevel">
+            <hasDescription>Low</hasDescription>
+          </ConnectorRiskLevel>
+        </hasConnectorRiskLevel>
+        <hasConnectorCoordinateSystem>
+          <ConnectorCoordinateSystem rdf:ID="SleeveCoordinateSystem_7">
+            <hasDescription>Linear</hasDescription>
+          </ConnectorCoordinateSystem>
+        </hasConnectorCoordinateSystem>
+        <hasConnectorTopologyType>
+          <ConnectorTopologyType rdf:ID="Sleeve_7_TopologyType">
+            <isGroupedInto rdf:resource="#SleeveGroupCoordinateSystem_1_Group_TopologyRel"/>
+            <hasDescription>Edge</hasDescription>
+          </ConnectorTopologyType>
+        </hasConnectorTopologyType>
+      </Sleeve>
+    </isConnectedBy>
+  </SteelBar>
+  <SteelBar rdf:ID="SteelBar_1_2_4">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_2"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy rdf:resource="#Sleeve_4"/>
+  </SteelBar>
+  <SteelBar rdf:ID="SteelBar_1_1_7">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_1"/>
+    <isConnectedBy rdf:resource="#Sleeve_7"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+  </SteelBar>
+  <Tower rdf:ID="Tower_2">
+    <isGroupedInto rdf:resource="#PrecastBridge_1"/>
+  </Tower>
+  <SteelBar rdf:ID="SteelBar_1_2_5">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_2"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy rdf:resource="#Sleeve_5"/>
+  </SteelBar>
+  <ColumnSegment rdf:ID="ColumnSegment_1_5">
+    <isGroupedInto rdf:resource="#Column_1"/>
+  </ColumnSegment>
+  <SteelBar rdf:ID="SteelBar_1_1_8">
+    <isGroupedInto rdf:resource="#ColumnSegment_1_1"/>
+    <hasSpecification>HRB400, Φ16</hasSpecification>
+    <isConnectedBy rdf:resource="#Sleeve_8"/>
+  </SteelBar>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

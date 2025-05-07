@@ -1,0 +1,27 @@
+INSERT {
+    ?relationship rdf:type :DefectElementTopologyRelationship ;
+                  :hasDescription ?combinedDesc .
+    ?defect :isDecomposedBasedOn ?relationship .       
+    ?topologyType :isGroupedInto ?relationship .
+}
+WHERE {
+    {
+        SELECT ?connector ?defect 
+               (GROUP_CONCAT(?desc; SEPARATOR=" + ") AS ?combinedDesc)
+               (IRI(CONCAT(STR(?connector), "_TopologyRel")) AS ?relationship)
+        WHERE {
+            ?defectElement a/rdfs:subClassOf* :DefectElement ;
+                           :hasDefectElementTopologyType ?topologyType ;
+                           :hasDefectElementCoordinate/:isDefinedIn ?coordSystem .
+            ?topologyType :hasDescription ?desc .
+            ?connector :hasConnectorCoordinateSystem ?coordSystem ;
+                       :hasDefect ?defect .
+        }
+        GROUP BY ?connector ?defect
+    }
+    ?defectElement :hasDefectElementTopologyType ?topologyType ;
+                   :hasDefectElementCoordinate/:isDefinedIn ?coordSystem .
+    ?connector :hasConnectorCoordinateSystem ?coordSystem ;
+               :hasDefect ?defect .
+    FILTER NOT EXISTS { ?relationship a :DefectElementTopologyRelationship }
+}

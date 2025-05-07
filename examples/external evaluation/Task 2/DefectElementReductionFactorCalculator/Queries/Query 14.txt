@@ -1,0 +1,15 @@
+INSERT {  
+    ?defectElement :hasReductionFactor ?defectElementReductionFactor .
+    ?defectElementReductionFactor a :DefectElementReductionFactor ;
+                                  :hasValue ?reductionValue .
+}
+WHERE {
+    ?defectElement a/rdfs:subClassOf* :DefectElement ;
+                   :hasDefectElementTopologyType ?topologyType .
+    ?topologyType :hasDescription ?description .
+    
+    FILTER(?description IN ("Steel bar eccentricity", "Uniformly distributed bubbles"))
+    
+    BIND(IF(?description = "Steel bar eccentricity", 1, 0.9) AS ?reductionValue)
+    BIND(IRI(CONCAT(STR(?defectElement), "_ReductionFactor")) AS ?defectElementReductionFactor)
+}

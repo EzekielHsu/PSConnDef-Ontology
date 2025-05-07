@@ -1,0 +1,11 @@
+INSERT {
+    ?defectelement :hasDefectElementTopologyType ?topologyType .
+    ?topologyType a :DefectElementTopologyType ;
+        :hasDescription ?description .
+}
+WHERE {
+    ?defectelement a :SteelBarEccentricity .
+    
+    BIND("Steel bar eccentricity" AS ?description)
+    BIND(IRI(CONCAT(STR(?defectelement), "_TopologyType")) AS ?topologyType)
+}

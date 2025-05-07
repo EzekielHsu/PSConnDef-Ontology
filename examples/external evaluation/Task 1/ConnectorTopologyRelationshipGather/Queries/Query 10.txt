@@ -1,0 +1,31 @@
+INSERT {
+    ?connectorGroup rdf:type :ConnectorGroup;
+                   :hasConnectorGroupCoordinateSystem ?connectorGroupCoordinateSystem .
+    ?connector :isGroupedInto ?connectorGroup .
+}
+WHERE {
+    ?connector a/rdfs:subClassOf* :Connector ;
+              :hasConnectorCoordinate ?coordinate .
+    ?coordinate :isDefinedIn ?connectorGroupCoordinateSystem .
+    
+    BIND(
+        IF(EXISTS { ?connector a :Sleeve }, "SleeveGroup",
+          IF(EXISTS { ?connector a :Bolt }, "BoltGroup",
+            IF(EXISTS { ?connector a :Weld }, "WeldGroup",
+              "ConnectorGroup"
+            )
+          )
+        ) AS ?groupTypeSuffix
+    )
+    
+    BIND(
+        IF(?groupTypeSuffix = "SleeveGroup", :SleeveGroup,
+          IF(?groupTypeSuffix = "BoltGroup", :BoltGroup,
+            IF(?groupTypeSuffix = "WeldGroup", :WeldGroup, :ConnectorGroup)
+          )
+        ) AS ?groupClass
+    )
+    
+    BIND(IRI(CONCAT(STR(?connectorGroupCoordinateSystem), "_Group")) AS ?connectorGroup)
+    FILTER NOT EXISTS { ?connectorGroup rdf:type ?groupClass }
+}

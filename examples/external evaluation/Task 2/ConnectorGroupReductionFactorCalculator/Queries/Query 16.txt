@@ -1,0 +1,29 @@
+INSERT {  
+  ?connectorGroup :hasReductionFactor ?connectorGroupReductionFactor .
+  ?connectorGroupReductionFactor a :ConnectorGroupReductionFactor ;
+                                :hasValue ?value .
+}
+WHERE {
+  {
+    SELECT ?connectorGroup (URI(CONCAT(STR(?connectorGroup), "_ReductionFactor")) AS ?connectorGroupReductionFactor)
+    WHERE {
+      ?connectorGroup a/rdfs:subClassOf* :ConnectorGroup .
+    }
+  }
+  
+  {
+    SELECT ?connectorGroup 
+           (SUM(IF(?topologyDesc = "End", ?connectorValue * 0.75, ?connectorValue * 0.67)) AS ?sumWeighted)
+           (SUM(IF(?topologyDesc = "End", 0.75, 0.67)) AS ?sumCoefficients)
+    WHERE {
+      ?connector :isGroupedInto ?connectorGroup .
+      ?connector :hasReductionFactor/:hasValue ?connectorValue .
+      OPTIONAL {
+        ?connector :hasConnectorTopologyType/:hasDescription ?topologyDesc .
+      }
+    }
+    GROUP BY ?connectorGroup
+  }
+  
+  BIND((?sumWeighted / ?sumCoefficients) AS ?value)
+}

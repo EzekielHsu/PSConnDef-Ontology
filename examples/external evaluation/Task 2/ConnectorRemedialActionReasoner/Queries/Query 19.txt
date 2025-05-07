@@ -1,0 +1,18 @@
+INSERT {  
+  ?connector :hasReductionFactor ?connectorRemedialAction .
+  ?connectorRemedialAction a :ConnectorRemedialAction ;
+                           :hasDescription ?actionLabel .
+}
+WHERE {
+  ?connector a/rdfs:subClassOf* :Connector ;
+             :hasRiskLevel ?riskLevel .
+  ?riskLevel :hasDescription ?riskLable .
+  
+  BIND(IRI(CONCAT(STR(?connector), "_RemedialAction")) AS ?connectorRemedialAction)
+  
+  BIND(
+    IF(?riskLable = "Low", "No action",
+      IF(?riskLable = "Medium", "Regularly observation", "Reinforcement")
+    ) AS ?actionLabel
+  )
+}

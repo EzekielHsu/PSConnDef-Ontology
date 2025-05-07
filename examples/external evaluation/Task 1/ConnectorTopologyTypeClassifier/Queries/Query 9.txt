@@ -1,0 +1,41 @@
+INSERT {
+    ?connector :hasConnectorTopologyType ?topologyType .
+    ?topologyType rdf:type :ConnectorTopologyType ;
+                  :hasDescription ?description .
+}
+WHERE {
+    {
+        ...
+        }
+        GROUP BY ?connector ?x ?y 
+        HAVING (COUNT(*) = 2)  
+    }
+    
+    BIND((?x1 - ?x) AS ?v1x)
+    BIND((?y1 - ?y) AS ?v1y)
+    BIND((?x2 - ?x) AS ?v2x)
+    BIND((?y2 - ?y) AS ?v2y)
+    
+    BIND((?v1x * ?v2x) AS ?vxProduct)
+    BIND((?v1y * ?v2y) AS ?vyProduct)
+    BIND((?vxProduct + ?vyProduct) AS ?dotProduct)
+    
+    BIND((?v1x * ?v1x) AS ?v1xSq)
+    BIND((?v1y * ?v1y) AS ?v1ySq)
+    BIND((?v1xSq + ?v1ySq + 0.00000001) AS ?sumV1)
+    BIND(math:sqrt(?sumV1) AS ?mod1)
+    
+    BIND((?v2x * ?v2x) AS ?v2xSq)
+    BIND((?v2y * ?v2y) AS ?v2ySq)
+    BIND((?v2xSq + ?v2ySq + 0.00000001) AS ?sumV2)
+    BIND(math:sqrt(?sumV2) AS ?mod2)
+    
+    BIND((?dotProduct / (?mod1 * ?mod2)) AS ?cosTheta)
+    BIND(IF(?cosTheta > 1.0, 1.0, IF(?cosTheta < -1.0, -1.0, ?cosTheta)) AS ?cosClamped)
+    BIND(math:acos(?cosClamped) AS ?radians)
+    BIND((?radians*180)/3.1415926 AS ?angleRaw)
+    BIND(IF(?angleRaw > 180, 360 - ?angleRaw, ?angleRaw) AS ?angle)
+    
+    BIND(IF(?angle < 150, "Corner", "Edge") AS ?desc)
+    BIND(IRI(CONCAT(STR(?connector), "_TopologyType")) AS ?topologyType)
+}

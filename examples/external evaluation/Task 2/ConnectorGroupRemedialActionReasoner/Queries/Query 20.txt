@@ -1,0 +1,18 @@
+INSERT {  
+  ?connectorGroup :hasReductionFactor ?connectorGroupRemedialAction .
+  ?connectorGroupRemedialAction a :ConnectorGroupRemedialAction ;
+                                :hasDescription ?groupActionLabel .
+}
+WHERE {
+  ?connectorGroup a/rdfs:subClassOf* :ConnectorGroup ;
+                  :hasRiskLevel ?groupRiskLevel .
+  ?groupRiskLevel :hasDescription ?groupRiskLable .
+  
+  BIND(IRI(CONCAT(STR(?connectorGroup), "_RemedialAction")) AS ?connectorGroupRemedialAction)
+  
+  BIND(
+    IF(?groupRiskLevel = "Low", "No action",
+      IF(?groupRiskLevel = "Medium", "Regularly observation", "Reinforcement")
+    ) AS ?groupActionLabel
+  )
+}

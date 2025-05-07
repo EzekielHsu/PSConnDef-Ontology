@@ -1,0 +1,14 @@
+INSERT {
+    ?defect rdf:type :Defect .
+    ?connector :hasDefect ?defect .
+    ?defectElement :isGroupedInto ?defect .
+}
+WHERE {
+    ?defectElement a/rdfs:subClassOf* :DefectElement .
+    ?defectElement :hasDefectElementCoordinate ?coordinate .
+    ?coordinate :isDefinedIn ?coordSystem .
+    ?connector :hasConnectorCoordinateSystem ?coordSystem .
+    
+    BIND(IRI(CONCAT(STR(?connector), "_Defect")) AS ?defect)
+    FILTER NOT EXISTS { ?defect a :Defect }
+}

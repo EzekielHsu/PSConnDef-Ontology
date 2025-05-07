@@ -1,0 +1,62 @@
+INSERT {
+    ?connector :hasConnectorTopologyType ?topologyType .
+    ?topologyType rdf:type :ConnectorTopologyType ;
+                  :hasDescription ?description .
+}
+WHERE {
+    {
+        SELECT ?connector (COUNT(?adjacentConnector) AS ?adjacentCount) 
+        WHERE {
+            {
+                SELECT ?connector ?adjacentConnector ("RIGHT" AS ?direction)
+                WHERE {
+                    SELECT 
+                        ?connector ?x ?y ?system
+                        (MIN(?candidateX) AS ?nearestX) 
+                        (SAMPLE(?validCandidate) AS ?adjacentConnector)
+                    WHERE {
+                        ?connector rdf:type/rdfs:subClassOf* :Connector ;
+                                   :hasConnectorCoordinate [
+                                       :isDefinedIn ?system ;
+                                       :hasFirstValue ?x ;
+                                       :hasSecondValue ?y ] .
+                        ?candidate rdf:type/rdfs:subClassOf* :Connector ;
+                                   :hasConnectorCoordinate [ 
+                                       :isDefinedIn ?system ;
+                                       :hasFirstValue ?candidateX ;
+                                       :hasSecondValue ?y ] .
+                        FILTER (?candidateX > ?x && ?candidate != ?connector)
+                        { 
+                            SELECT ?connector (MIN(?cx) AS ?minX) 
+                            WHERE {
+                                ?connector :hasConnectorCoordinate [ 
+                                    :isDefinedIn ?sys ;
+                                    :hasFirstValue ?cxBase ;
+                                    :hasSecondValue ?cy 
+                                ] .
+                                ?c :hasConnectorCoordinate [ 
+                                    :isDefinedIn ?sys ;
+                                    :hasFirstValue ?cx ;
+                                    :hasSecondValue ?cy 
+                                ] .
+                                FILTER (?cx > ?cxBase && ?c != ?connector)
+                            }
+                            GROUP BY ?connector 
+                        }
+                        FILTER (?candidateX = ?minX)
+                        BIND(?candidate AS ?validCandidate)
+                    }
+                    GROUP BY ?connector ?x ?y ?system
+                }
+            }
+            UNION
+            {  
+                ...
+            }
+        }
+        GROUP BY ?connector
+        HAVING (?adjacentCount = 1)
+    }
+    BIND("End" AS ?description)
+    BIND(URI(CONCAT(STR(?connector), "_TopologyType")) AS ?topologyType)
+}
